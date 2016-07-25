@@ -18,7 +18,10 @@ module SpinaArticles
       def copy_migration_file
         migration_template "create_spina_articles_table.rb", Rails.root.join("db/migrate/create_spina_articles_table.rb")
         migration_template "add_photo_id_to_spina_articles.rb", Rails.root.join("db/migrate/add_photo_id_to_spina_articles.rb")
+        migration_template "create_spina_categories.rb", Rails.root.join("db/migrate/create_spina_categories.rb")
+        migration_template "add_spina_category_id_to_spina_articles.rb", Rails.root.join("db/migrate/add_spina_category_id_to_spina_articles.rb")
       end
+      
 
     end
   end
