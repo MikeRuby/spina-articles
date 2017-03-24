@@ -1,0 +1,24 @@
+#advanced.tab-content.well
+  .horizontal-form
+    .horizontal-form-group
+      .horizontal-form-label
+        Article Category
+      .horizontal-form-content
+        .select-dropdown.category
+          - options = options_for_select(Spina::Category.all.map { |category| [category.name, category.id] }, f.object.category_id)
+          = f.select :category_id, options, include_blank: Spina::Category.human_attribute_name(:select_category)
+    .horizontal-form-group
+      .horizontal-form-label
+        Publish date
+      .horizontal-form-content
+        = f.text_field :publish_date, value: (@article.publish_date.strftime("%d-%m-%Y") unless @article.new_record?), class: 'datepicker'
+    .horizontal-form-group
+      .horizontal-form-label
+        Author
+      .horizontal-form-content
+        = f.text_field :author
+    .horizontal-form-group
+      .horizontal-form-label
+        Draft?
+      .horizontal-form-content
+        = f.check_box :draft, data: { switch: true }

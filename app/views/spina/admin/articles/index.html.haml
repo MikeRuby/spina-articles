@@ -7,12 +7,18 @@
         %small=t 'spina.pages.invisible_to_search_engines_description'
 
 %header#header
-  .breadcrumbs= render_breadcrumbs seperator: '<div class="divider"></div>'
   #header_actions
     %span
       = link_to spina.new_admin_article_path, class: 'button button-primary' do
         = icon('plus')
         =t('spina.articles.new', scaffold_name: t('spina.articles.scaffold_name'))
+
+  .breadcrumbs= render_breadcrumbs seperator: '<div class="divider"></div>'
+
+  %nav#secondary.tabs
+    %ul
+      %li{class: ('active' if controller_name == 'articles')}
+        = link_to t('spina.articles.all_articles'), spina.admin_articles_path
 
 .well
   - if @articles.any?

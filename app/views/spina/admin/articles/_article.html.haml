@@ -2,6 +2,9 @@
   %div.dd-item-inner
     = link_to spina.edit_admin_article_path(article), class: 'button button-link button-small sortable-link' do
       = article.title
+      - if article.draft?
+        %small (#{t('spina.articles.concept')})
+
     %span.pull-right
       = link_to spina.edit_admin_article_path(article), class: 'button button-small button-link dd-nodrag' do
         = icon('pencil-outline')

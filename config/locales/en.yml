@@ -9,6 +9,15 @@ en:
       save: ! 'Save %{scaffold_name}'
       delete_confirmation: "Are you sure you want to delete <strong>%{subject}'s</strong> message?"
       empty: ! 'No %{scaffold_name} Yet'
+      all_articles: All articles
+      article_content: Content
+      advanced: Advanced
+      concept: draft
 
     categories:
       title: Categories
+
+  activerecord:
+    attributes:
+      spina/category:
+        select_category: Select a Category
