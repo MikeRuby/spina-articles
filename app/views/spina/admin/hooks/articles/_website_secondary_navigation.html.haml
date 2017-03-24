@@ -1,6 +1,6 @@
 %li{ class: ('active' if current_admin_path.start_with?('/articles')) }
   = link_to spina.admin_articles_path do
-    = t('spina.articles.title')
+    = t('spina.articles.title', scaffold_name: t('spina.articles.scaffold_name_plural'))
 
 %li{ class: ('active' if current_admin_path.start_with?('/categories')) }
   = link_to spina.admin_categories_path do

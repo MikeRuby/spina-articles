@@ -12,7 +12,7 @@
     #header_actions
       %button.button.button-primary{type: 'submit'}
         = icon('check')
-        Save article
+        = t('spina.articles.save', scaffold_name: t('spina.articles.scaffold_name'))
       = link_to t('spina.cancel'), spina.admin_articles_path, class: 'button button button-secondary'
 
   - content_for :notification_alert do
@@ -70,4 +70,4 @@
           = f.check_box :draft, data: { switch: true }
 
   - unless @article.new_record?
-    .pull-right= link_to t('spina.permanently_delete'), spina.admin_articles_path, method: :delete, data: {confirm: t('spina.pages.delete_confirmation', subject: @article.title) }, class: 'button button-link button-danger'
+    .pull-right= link_to t('spina.permanently_delete'), spina.admin_article_path(@article), method: :delete, data: {confirm: t('spina.pages.delete_confirmation', subject: @article.title) }, class: 'button button-link button-danger'

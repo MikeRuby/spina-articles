@@ -1,7 +1,14 @@
 en:
   spina:
     articles:
-      title: Articles
+      scaffold_name: Article
+      scaffold_name_plural: Articles
+      title: ! '%{scaffold_name}'
+      all: ! 'All %{scaffold_name}'
+      new: ! 'New %{scaffold_name}'
+      save: ! 'Save %{scaffold_name}'
+      delete_confirmation: "Are you sure you want to delete <strong>%{subject}'s</strong> message?"
+      empty: ! 'No %{scaffold_name} Yet'
 
     categories:
       title: Categories
