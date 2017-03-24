@@ -1,3 +1,7 @@
 %li{ class: ('active' if current_admin_path.start_with?('/articles')) }
   = link_to spina.admin_articles_path do
-    = plugin.name
+    = t('spina.articles.title')
+
+%li{ class: ('active' if current_admin_path.start_with?('/categories')) }
+  = link_to spina.admin_categories_path do
+    = t('spina.categories.title')
